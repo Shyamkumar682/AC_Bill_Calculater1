@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Bill Calculator</title>
+    <link rel="stylesheet" href="ac_styles.css">
+</head>
+<body>
+
+
+
+    <h2>AC Electricity Bill Calculator</h2>
+    <div class="tricolor-background">
+    <div class="pulse saffron"></div>
+    <div class="pulse white"></div>
+    <div class="pulse green"></div>
+</div>
+
+    <div class="container">
+        <label for="tonnage">AC Tonnage * :</label>
+        <select id="tonnage" required>
+            <option value="" disabled selected>Select Capacity</option>
+            <option value="1">1 Ton</option>
+            <option value="1.5">1.5 Ton</option>
+            <option value="2">2 Ton</option>
+        </select>
+
+        <label for="hours">Usage Hours Per Day * :</label>
+        <input type="number" id="hours" placeholder="e.g., 8" reaquired>
+
+        <label for="star">Star Rating * :</label>
+        <select id="star" required>
+            <option value="" disabled selected>Select ⭐ Rating </option>
+            <option value="3">3 Star</option>
+            <option value="4">4 Star</option>
+            <option value="5">5 Star</option>
+        </select>
+
+        <label for="tariff">Electricity Tariff (₹/kWh) * :</label>
+        <input type="number" id="tariff" step="0.1" placeholder="e.g., 5" required>
+
+        <label for="coolingCapacity">Cooling Capacity(W) * :</label>
+        <input type="number" id="coolingCapacity" placeholder="e.g., 5100" required>
+
+        <div class="buttons">
+            <button id="calculateBtn">Calculate Bill</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+    </div>
+    
+
+    <!-- Moved the output box below -->
+    <p id="result"></p>
+
+    <!-- Moved the footer further down -->
+    <footer>
+        <p>© 2025 AC Energy Calculator</p>
+    </footer>
+
+    <script src="ac_script.js"></script>
+
+</body>
+</html>

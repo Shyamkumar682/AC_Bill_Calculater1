@@ -1,0 +1,273 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1e1e, #383838);
+    color: white;
+}
+
+/* Tricolor Pulse Background */
+.tricolor-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.pulse {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    opacity: 0.2;
+    border-radius: 50%;
+    animation: pulseEffect 15s linear infinite;
+}
+
+.saffron {
+    background: radial-gradient(circle, #ff9933 0%, transparent 70%);
+    top: -50%;
+    left: -30%;
+}
+
+.white {
+    background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+    top: 50%;
+    left: 30%;
+}
+
+.green {
+    background: radial-gradient(circle, #138808 0%, transparent 70%);
+    bottom: -30%;
+    right: -50%;
+}
+
+@keyframes pulseEffect {
+    0% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.5); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 0.2; }
+}
+
+
+/* Header Styling */
+h1 {
+    font-size: 36px;
+    text-align: left;
+    margin: 20px;
+    text-transform: uppercase;
+    animation: ripplePulse 8s ease-in-out infinite;
+    width: fit-content;
+}
+
+/* Multicolor Sparkling Animation */
+@keyframes ripplePulse {
+    0%   { box-shadow: 0 0 0px rgba(255,255,255,0.1); }
+    50%  { box-shadow: 0 0 50px rgba(255,255,255,0.4); }
+    100% { box-shadow: 0 0 0px rgba(255,255,255,0.1); }
+}
+
+h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    animation: rgbEffect 3s infinite alternate;
+}
+
+/* RGB Animation */
+@keyframes rgbEffect {
+    0% { text-shadow: 0 0 10px red, 0 0 20px blue; }
+    50% { text-shadow: 0 0 15px green, 0 0 25px yellow; }
+    100% { text-shadow: 0 0 10px cyan, 0 0 20px magenta; }
+}
+
+
+/* Card Container with Grid Alignment */
+.container {
+    display: grid;
+    grid-template-columns: auto 0.5fr;
+    gap: 5px;
+    max-width: 500px;
+    background: rgba(0, 255, 204, 0.3);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    text-align: left;
+    margin: unset;
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Make input boxes transparent */
+input, select {
+    width: 120%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    outline: 40px;
+    background-color: transparent;
+    color: black;
+}
+
+input::placeholder {
+    color: black !important;
+}
+
+select option {
+    background-color: #383838;
+    color: white;
+}
+
+/* Button Styling */
+button {
+    width: 80%;
+    max-width: auto;
+    padding: 15px;
+    margin: 20px auto 10px auto;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 3.10px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    background: linear-gradient(150deg, #ff6600, #ffcc00);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    display: block;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ffcc00, #ff6600);
+}
+
+/* Ensure transparent background stays correct size */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    max-width: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    margin: auto;
+}
+
+/* Make input boxes uniform */
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+}
+
+
+/* Adjust button size and positioning */
+.buttons {
+    display: contents;
+    justify-content: space-between; /* Buttons now correctly positioned */
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Ensure "Calculate Bill" is on the left and "Reset" on the right */
+#calculateBtn {
+    order: 2;
+}
+
+#resetBtn {
+    order: 1;
+}
+
+/* Ensure the output box remains unchanged but is repositioned */
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00ffcc;
+    box-shadow: 0 0 5px rgba(0, 255, 204, 0.3);
+    position: unset;
+    width: 30%;
+    margin: auto;
+}
+
+/* Footer Styling */
+footer {
+    font-size: 14px;
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    color: #ccc;
+    width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        width: 95%;
+        max-width: 600px;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    input, select, button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    button {
+        width: 90%;
+    }
+}
+
+/* Style for background video 
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.3; /* Adjust this to dim the video if needed 
+    pointer-events: none; /* Prevent video from interfering with clicks 
+}
+
+/* Optional overlay for better text readability 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* Semi-transparent dark layer 
+    z-index: 0;
+    opacity: 0.6;
+}
+    */
